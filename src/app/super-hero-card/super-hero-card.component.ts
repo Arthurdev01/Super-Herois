@@ -8,5 +8,5 @@ import { SuperHeroService } from '../../service/super-hero.service';
   styleUrl: './super-hero-card.component.css'
 })
 export class SuperHeroCardComponent {
-@Input() heroi: any = null
+@Input() heroi: any = null // aqui ele basicamente recebe o heroi de fora 
 }

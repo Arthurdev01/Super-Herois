@@ -1,3 +1,43 @@
+<!-- basicamente o que estou fazendo nesse html eh fazer com que ele mostre os dados do heroi na tela, como nome, sexo e nome completo
+esse ? funciona pra tipo, so mostra tal coisa, se essa coisa ja existir
+
+ESSE CARD SO VAI FUNCIONAR COMO VISUAL, AQUI VOU EXIBIR OS DETALHES DO MEU HEROI
+-->
+<h2>Informações básicas</h2>
 <p>{{ heroi?.name }}</p>
-<p>{{ heroi?.biography?.fullName }}</p>
-<p>{{ heroi?.appearance?.gender }}</p>
+
+<h2>Poderes</h2>
+<p>intelligence: {{ heroi?.powerstats?.intelligence }}</p>
+<p>strengt: {{ heroi?.powerstats?.strength }}</p>
+<p>speed: {{ heroi?.powerstats?.speed }}</p>
+<p>durability: {{ heroi?.powerstats?.durability }}</p>
+<p>power: {{ heroi?.powerstats?.power }}</p>
+<p>combat: {{ heroi?.powerstats?.combat }}</p>
+
+<h2>caracteristica</h2>
+<p>gender: {{ heroi?.appearance?.gender }}</p>
+<p>race: {{ heroi?.appearance?.race }}</p>
+<p>height: {{ heroi?.appearance?.height }}</p>
+<p>weight: {{ heroi?.appearance?.weight }}</p>
+<p>eyeColor: {{ heroi?.appearance?.eyeColor }}</p>
+<p>hairColor: {{ heroi?.appearance?.hairColor }}</p>
+
+<h2>biografia</h2>
+<p>Full Name: {{ heroi?.biography?.fullName }}</p>
+<p>alterEgos : {{ heroi?.biography?.alterEgos }}</p>
+<p>aliases: {{ heroi?.biography?.aliases }}</p>
+<p>placeOfBirth: {{ heroi?.biography?.placeOfBirth }}</p>
+<p>firstAppearance: {{ heroi?.biography?.firstAppearance }}</p>
+<p>publisher : {{ heroi?.biography?.publisher }}</p>
+<p>alignment : {{ heroi?.biography?.alignment }}</p>
+
+<h2>trabalho</h2>
+<p>occupation: {{ heroi?.biography?.occupation }}</p>
+<p>base: {{ heroi?.biography?.base }}</p>
+
+<h2>conexão</h2>
+<p>Group Affiliation: {{ heroi?.biography?.groupAffiliation }}</p>
+<p>relatives: {{ heroi?.biography?.relatives }}</p>
+
+<h2>images</h2>
+<img [src]="heroi?.images?.md" />

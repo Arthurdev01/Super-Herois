@@ -1,1 +1,7 @@
-<p>super-hero-list works!</p>
+<ul>
+  <li (click)="irParaDetails(heroi)" *ngFor="let heroi of herois">
+    <!-- aqui eu tenho uma lista que mostra todos os meu herois-->
+    {{ heroi.name }}
+    <!--aqui estou fazendo essa lista mostrar apenas o nome desses herois -->
+  </li>
+</ul>
