@@ -57,6 +57,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+
+          },
           "configurations": {
             "production": {
               "buildTarget": "super_herois:build:production"
