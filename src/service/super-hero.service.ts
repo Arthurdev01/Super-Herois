@@ -18,5 +18,9 @@ export class SuperHeroService {
     return this.http.get('https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json') //aqui estou utilizando o http da minha API, e vinculando um retorno desses dados
     //no meu getHerois, entao que for utilizar ele, vai receber a API
   }
+
+  getHeroisDetails(id: any){
+    return this.http.get(`https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api//id/${id}.json`)// aqui eh uma nova rota usando ID dos personagems de forma dinamica
+  }
 }
 

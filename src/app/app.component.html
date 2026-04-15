@@ -1,6 +1,8 @@
+<!--
 <ul>
-  <li (click)="salvarDados(heroi)" *ngFor="let heroi of herois">
-    {{ heroi.name }}
+  <li (click)="irParaDetails(heroi)" *ngFor="let heroi of herois"> aqui eu tenho uma lista que mostra todos os meu herois
+    {{ heroi.name }} aqui estou fazendo essa lista mostrar apenas o nome desses herois
   </li>
 </ul>
-<app-super-hero-card [heroi]="heroiSelecionado"></app-super-hero-card>
+-->
+<router-outlet></router-outlet>
