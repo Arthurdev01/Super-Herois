@@ -2,17 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { Data, RouterOutlet } from '@angular/router';
 import { SuperHeroService } from '../service/super-hero.service';
 import { CommonModule, NgFor,} from '@angular/common';
+import { SuperHeroCardComponent } from "./super-hero-card/super-hero-card.component";
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, NgFor],
+  imports: [RouterOutlet, CommonModule, NgFor, SuperHeroCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
+
   title = 'super_herois';
   herois: any; //propriedade pertence a uma classe
+  heroiSelecionado: any;
 
     constructor(private superhero:SuperHeroService) {
   }
@@ -23,5 +26,9 @@ export class AppComponent implements OnInit{
   error: (err) => console.error('Error occurred:', err)
 })
 
+  }
+  salvarDados(heroi: any ): void {
+    console.log('clicou', heroi);
+    this.heroiSelecionado = heroi
   }
 }

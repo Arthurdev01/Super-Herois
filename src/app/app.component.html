@@ -1,5 +1,6 @@
 <ul>
-  <li *ngFor="let heroi of herois">
+  <li (click)="salvarDados(heroi)" *ngFor="let heroi of herois">
     {{ heroi.name }}
   </li>
 </ul>
+<app-super-hero-card [heroi]="heroiSelecionado"></app-super-hero-card>
