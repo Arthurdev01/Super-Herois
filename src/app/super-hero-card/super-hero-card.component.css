@@ -1,0 +1,137 @@
+:host {
+  display: block;
+  height: 100vh;
+  width: 100%;
+}
+
+.container{
+  display: flex; /* poder mexer nos elementos da minha tela de maneira felxivel */
+}
+
+.background {
+  background: linear-gradient(45deg, #101010, #1e053a, #121212, #290450); /* aqui estou definindo as cores e sua inclinaçao */
+  min-height: 100vh; /* aqui eu to definindo o tamnho minimo da minha tela, caso passe de 100 ela estica  */
+  background-size: 400% 400%; /* aqui estou aumentando o tamanho do background para que o efeito de se mover funcione  */
+  animation: meshAnimationDark 12s ease infinite; /* aqui estou animando o meu background */
+  justify-content: center; /* aqui estou centralizando o conteudo que esta dentro do meu background  horizontal */
+  align-items: center; /* mesma coisa que o justify so que  verticalmente*/
+}
+
+.card {
+  width: 70%; /* aqui estou definindo o tamanho do meu card*/
+  background-color: rgba(255, 255, 255, 0.021); /*definindo a cor de fundo meu card como transparente */
+  border: 1px solid rgba(255, 255, 255, 0.021);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 30px; /*aqui estou dando uma borda para meu card*/
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /*criando uma sombra no meu card */
+  padding: 30px; /*dando um espaçamento interno da coisas com a minha borda */
+  max-width: 900px; /*definindo altura maxima do meu card*/
+  align-items: baseline;
+}
+
+.name-image {
+  flex-direction: column; /* organizando em coluna, cima pra baixo */
+  align-items: center; /* centralizar itens verticalmente */
+  justify-content: center; /* centraliza de maneita horizontal */
+}
+
+.nome {
+  font-family: "Sekuya", system-ui; /* fonte do meu nome */
+  font-weight: 700; /* grossura da linha  */
+  font-style: normal; /* seu comentário aqui */
+  font-size: 30px; /* tamanho da fonte */
+  color: #ffffff; /* cor do texto */
+  text-align: center; /* deixando ela centralizada  */
+  text-transform: capitalize; /* transforma a primeira letra em maiuscula  */
+  text-shadow: 2px 2px 4px #7d0cc9; /* sombra do nome */
+}
+
+.card-imagem{
+  max-width: 50%;/* sombra do nome */
+  height: auto;/* sombra do nome */
+  margin-bottom: 20px;/* sombra do nome */
+  box-shadow: 5px 5px 10px rgb(54, 54, 54);/* sombra do nome */
+  border: 5px solid transparent;/* sombra do nome */
+  border-radius: 15px;/* sombra do nome */
+  background-image: linear-gradient(white, white), linear-gradient(to right, #101010, #1e053a, #121212, #290450);/* sombra do nome */
+  background-origin: border-box;/* sombra do nome */
+  background-clip: content-box, border-box;/* sombra do nome */
+  animation: levitacaoMagnetica 4s ease-in-out infinite;/* sombra do nome */
+  margin-top: 20px;/* sombra do nome */
+}
+
+.biografia{
+    flex-direction: column;
+    align-items: center;
+}
+
+.biografia-title{
+  color: #ffffff;
+  background-color: #01cee9;
+
+}
+
+.biografia-descricao{
+  color: #ff0000;
+  background-color: #ffffff;
+}
+
+.conexao-trabalho{
+  background-color: #ffffff;
+  flex-direction: column; /* organizando em coluna, cima pra baixo */
+  align-items: center; /* centralizar itens verticalmente */
+  justify-content: center; /* centraliza de maneita horizontal */
+
+}
+
+.trabalho-title{
+  color: #fa0808;
+  background-color: #121212;
+
+}
+
+.trabalho-text{
+  background-color: #ffffff;
+
+}
+
+.conexao-title{
+  color: aqua;
+  background-color: #121212;
+}
+.conexao-text{
+  background-color: #fa0808;
+}
+
+
+@keyframes meshAnimationDark {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes levitacaoMagnetica {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    filter: brightness(100%);
+  }
+  30% {
+    transform: translateY(-20px) rotate(2deg); /* Sobe e inclina */
+    filter: brightness(120%); /* Brilha no topo */
+  }
+  60% {
+    transform: translateY(-15px) rotate(-2deg); /* Balanço suave */
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    filter: brightness(100%);
+  }
+}
+

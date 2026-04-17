@@ -1,43 +1,86 @@
-<!-- basicamente o que estou fazendo nesse html eh fazer com que ele mostre os dados do heroi na tela, como nome, sexo e nome completo
-esse ? funciona pra tipo, so mostra tal coisa, se essa coisa ja existir
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Sekuya&display=swap");
+</style>
 
-ESSE CARD SO VAI FUNCIONAR COMO VISUAL, AQUI VOU EXIBIR OS DETALHES DO MEU HEROI
--->
-<h2>Informações básicas</h2>
-<p>{{ heroi?.name }}</p>
+<div class="background container">
+  <div class="card container">
+    <div class="section1">
+      <h2>🧠 Poderes</h2>
 
-<h2>Poderes</h2>
-<p>intelligence: {{ heroi?.powerstats?.intelligence }}</p>
-<p>strengt: {{ heroi?.powerstats?.strength }}</p>
-<p>speed: {{ heroi?.powerstats?.speed }}</p>
-<p>durability: {{ heroi?.powerstats?.durability }}</p>
-<p>power: {{ heroi?.powerstats?.power }}</p>
-<p>combat: {{ heroi?.powerstats?.combat }}</p>
+      <p>Inteligência: {{ heroi?.powerstats?.intelligence }}</p>
 
-<h2>caracteristica</h2>
-<p>gender: {{ heroi?.appearance?.gender }}</p>
-<p>race: {{ heroi?.appearance?.race }}</p>
-<p>height: {{ heroi?.appearance?.height }}</p>
-<p>weight: {{ heroi?.appearance?.weight }}</p>
-<p>eyeColor: {{ heroi?.appearance?.eyeColor }}</p>
-<p>hairColor: {{ heroi?.appearance?.hairColor }}</p>
+      <p>Força: {{ heroi?.powerstats?.strength }}</p>
 
-<h2>biografia</h2>
-<p>Full Name: {{ heroi?.biography?.fullName }}</p>
-<p>alterEgos : {{ heroi?.biography?.alterEgos }}</p>
-<p>aliases: {{ heroi?.biography?.aliases }}</p>
-<p>placeOfBirth: {{ heroi?.biography?.placeOfBirth }}</p>
-<p>firstAppearance: {{ heroi?.biography?.firstAppearance }}</p>
-<p>publisher : {{ heroi?.biography?.publisher }}</p>
-<p>alignment : {{ heroi?.biography?.alignment }}</p>
+      <p>Velocidade: {{ heroi?.powerstats?.speed }}</p>
 
-<h2>trabalho</h2>
-<p>occupation: {{ heroi?.biography?.occupation }}</p>
-<p>base: {{ heroi?.biography?.base }}</p>
+      <p>Durabilidade: {{ heroi?.powerstats?.durability }}</p>
 
-<h2>conexão</h2>
-<p>Group Affiliation: {{ heroi?.biography?.groupAffiliation }}</p>
-<p>relatives: {{ heroi?.biography?.relatives }}</p>
+      <p>Poder: {{ heroi?.powerstats?.power }}</p>
 
-<h2>images</h2>
-<img [src]="heroi?.images?.md" />
+      <p>Combate: {{ heroi?.powerstats?.combat }}</p>
+    </div>
+
+    <div class="section1">
+      <h2>🧬 Características</h2>
+
+      <p>Gênero: {{ heroi?.appearance?.gender }}</p>
+
+      <p>Raça: {{ heroi?.appearance?.race }}</p>
+
+      <p>Altura: {{ heroi?.appearance?.height }}</p>
+
+      <p>Peso: {{ heroi?.appearance?.weight }}</p>
+
+      <p>Olhos: {{ heroi?.appearance?.eyeColor }}</p>
+
+      <p>Cabelo: {{ heroi?.appearance?.hairColor }}</p>
+    </div>
+
+    <div class="name-image container">
+      <h1 class="nome">{{ heroi?.name }}</h1>
+
+      <img class="card-imagem" [src]="heroi?.images?.md" />
+
+      <div class="biografia container">
+        <h2 class="biografia-title">📖 Biografia</h2>
+
+        <div class="biografia-descricao container">
+          <p>Nome completo: {{ heroi?.biography?.fullName }}</p>
+
+          <p>Alter ego: {{ heroi?.biography?.alterEgos }}</p>
+
+          <p>Apelidos: {{ heroi?.biography?.aliases }}</p>
+
+          <p>Nascimento: {{ heroi?.biography?.placeOfBirth }}</p>
+
+          <p>Primeira aparição: {{ heroi?.biography?.firstAppearance }}</p>
+
+          <p>Editora: {{ heroi?.biography?.publisher }}</p>
+
+          <p>Alinhamento: {{ heroi?.biography?.alignment }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="conexao-trabalho container">
+      <div class="trabalho-title container">
+        <h2>💼 Trabalho</h2>
+      </div>
+      <div class="trabalho-text container">
+        <p>Ocupação: {{ heroi?.work?.occupation }}</p>
+
+        <p>Base: {{ heroi?.work?.base }}</p>
+      </div>
+
+      <div class="conexao-title container">
+        <h2>🔗 Conexões</h2>
+      </div>
+
+      <div class="conexao-text container">
+        <p>Grupo: {{ heroi?.connections?.groupAffiliation }}</p>
+
+        <p>Parentes: {{ heroi?.connections?.relatives }}</p>
+      </div>
+    </div>
+  </div>
+</div>
