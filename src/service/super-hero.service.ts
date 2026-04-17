@@ -20,7 +20,7 @@ export class SuperHeroService {
   }
 
   getHeroisDetails(id: any){
-    return this.http.get(`https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api//id/${id}.json`)// aqui eh uma nova rota usando ID dos personagems de forma dinamica
+    return this.http.get(`https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/id/${id}.json`)// aqui eh uma nova rota usando ID dos personagems de forma dinamica
   }
 }
 
