@@ -2,136 +2,414 @@
   display: block;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
 }
 
-.container{
-  display: flex; /* poder mexer nos elementos da minha tela de maneira felxivel */
+.container {
+  display: flex;
 }
 
 .background {
-  background: linear-gradient(45deg, #101010, #1e053a, #121212, #290450); /* aqui estou definindo as cores e sua inclinaçao */
-  min-height: 100vh; /* aqui eu to definindo o tamnho minimo da minha tela, caso passe de 100 ela estica  */
-  background-size: 400% 400%; /* aqui estou aumentando o tamanho do background para que o efeito de se mover funcione  */
-  animation: meshAnimationDark 12s ease infinite; /* aqui estou animando o meu background */
-  justify-content: center; /* aqui estou centralizando o conteudo que esta dentro do meu background  horizontal */
-  align-items: center; /* mesma coisa que o justify so que  verticalmente*/
+  height: 100vh;
+  background: linear-gradient(45deg, #101010, #1e053a, #291241, #290450);
+  background-size: 400% 400%;
+  animation: meshAnimationDark 12s ease infinite;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transform: translateZ(0);
 }
 
 .card {
-  width: 70%; /* aqui estou definindo o tamanho do meu card*/
-  background-color: rgba(255, 255, 255, 0.021); /*definindo a cor de fundo meu card como transparente */
-  border: 1px solid rgba(255, 255, 255, 0.021);
+  width: 90%;
+  max-width: 1100px;
+  height: calc(100vh - 40px);
+  padding: 22px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 30px; /*aqui estou dando uma borda para meu card*/
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /*criando uma sombra no meu card */
-  padding: 30px; /*dando um espaçamento interno da coisas com a minha borda */
-  max-width: 900px; /*definindo altura maxima do meu card*/
-  align-items: baseline;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.poder-caracteristica {
+  width: 22%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 
 .name-image {
-  flex-direction: column; /* organizando em coluna, cima pra baixo */
-  align-items: center; /* centralizar itens verticalmente */
-  justify-content: center; /* centraliza de maneita horizontal */
+  width: 30%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.trabalho-conexao {
+  width: 38%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.poder-card,
+.info-card {
+  background: linear-gradient(
+    145deg,
+    rgba(20, 20, 35, 0.95),
+    rgba(10, 10, 20, 0.95)
+  );
+  border: 1px solid rgba(125, 12, 201, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.55),
+    0 0 18px rgba(125, 12, 201, 0.22),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  padding: 16px;
+  font-family: "Sekuya", system-ui;
+  color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.poder-card {
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.info-card {
+  overflow-x: hidden;
+  contain: layout paint;
+}
+
+.poder-card::before,
+.info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.poder-card::after,
+.info-card::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.06), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translateZ(0);
+}
+
+.poder-card:hover,
+.info-card:hover {
+  transform: translate3d(0, -3px, 0);
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.65),
+    0 0 22px rgba(34, 211, 238, 0.28);
+}
+
+.name-image .info-card {
+  margin-top: 20px;
+  max-height: 330px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+.trabalho-conexao .info-card:first-child {
+  margin-bottom: 20px;
+  max-height: 190px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+.trabalho-conexao .info-card:last-child {
+  max-height: 430px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+.info-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.info-card::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+}
+
+.info-card::-webkit-scrollbar-thumb {
+  background: rgba(125, 12, 201, 0.8);
+  border-radius: 10px;
+}
+
+.card-titulo,
+.item,
+.stat {
+  position: relative;
+  z-index: 1;
+}
+
+.card-titulo {
+  font-family: "Sekuya", system-ui;
+  color: #ffffff;
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 26px;
+  letter-spacing: 1px;
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.35),
+    0 0 10px rgba(125, 12, 201, 0.7);
+}
+
+.card-titulo::before {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.card-titulo::after {
+  content: "";
+  display: block;
+  width: 45%;
+  height: 1px;
+  margin: 7px auto 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+}
+
+.card-titulo.poderes::before {
+  content: "⚡";
+  animation: iconPulse 1.2s infinite alternate;
+}
+
+.card-titulo.caracteristicas::before {
+  content: "🧬";
+  animation: iconRotate 2s linear infinite;
+}
+
+.card-titulo.biografia::before {
+  content: "📖";
+  animation: iconFloat 2s ease-in-out infinite;
+}
+
+.card-titulo.trabalho::before {
+  content: "💼";
+  animation: iconBounce 1.4s infinite;
+}
+
+.card-titulo.conexoes::before {
+  content: "🔗";
+  animation: iconSwing 1.5s ease-in-out infinite;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  position: relative;
+}
+
+.info-card .item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(216, 180, 254, 0.35),
+    transparent
+  );
+}
+
+.label {
+  color: #cfcfcf;
+}
+
+.valor {
+  color: #d8b4fe;
+  font-weight: bold;
+  text-align: right;
+  word-break: break-word;
 }
 
 .nome {
-  font-family: "Sekuya", system-ui; /* fonte do meu nome */
-  font-weight: 700; /* grossura da linha  */
-  font-style: normal; /* seu comentário aqui */
-  font-size: 30px; /* tamanho da fonte */
-  color: #ffffff; /* cor do texto */
-  text-align: center; /* deixando ela centralizada  */
-  text-transform: capitalize; /* transforma a primeira letra em maiuscula  */
-  text-shadow: 2px 2px 4px #7d0cc9; /* sombra do nome */
-}
-
-.card-imagem{
-  max-width: 50%;/* sombra do nome */
-  height: auto;/* sombra do nome */
-  margin-bottom: 20px;/* sombra do nome */
-  box-shadow: 5px 5px 10px rgb(54, 54, 54);/* sombra do nome */
-  border: 5px solid transparent;/* sombra do nome */
-  border-radius: 15px;/* sombra do nome */
-  background-image: linear-gradient(white, white), linear-gradient(to right, #101010, #1e053a, #121212, #290450);/* sombra do nome */
-  background-origin: border-box;/* sombra do nome */
-  background-clip: content-box, border-box;/* sombra do nome */
-  animation: levitacaoMagnetica 4s ease-in-out infinite;/* sombra do nome */
-  margin-top: 20px;/* sombra do nome */
-}
-
-.biografia{
-    flex-direction: column;
-    align-items: center;
-}
-
-.biografia-title{
+  font-family: "Sekuya", system-ui;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 38px;
   color: #ffffff;
-  background-color: #01cee9;
-
+  text-align: center;
+  text-transform: capitalize;
+  text-shadow: 2px 2px 4px #7d0cc9;
+  margin: 0 0 28px;
+  flex-shrink: 0;
 }
 
-.biografia-descricao{
-  color: #ff0000;
-  background-color: #ffffff;
+.card-imagem {
+  max-width: 70%;
+  height: auto;
+  margin-bottom: 18px;
+  box-shadow: 5px 5px 10px rgb(54, 54, 54);
+  border: 5px solid transparent;
+  border-radius: 15px;
+  background-image: linear-gradient(white, white), linear-gradient(to right, #101010, #1e053a, #121212, #290450);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: levitacaoMagnetica 4s ease-in-out infinite;
+  flex-shrink: 0;
+  transform: translateZ(0);
+  will-change: transform, filter;
+  backface-visibility: hidden;
 }
 
-.conexao-trabalho{
-  background-color: #ffffff;
-  flex-direction: column; /* organizando em coluna, cima pra baixo */
-  align-items: center; /* centralizar itens verticalmente */
-  justify-content: center; /* centraliza de maneita horizontal */
-
+/* PODERES MANTIDOS */
+.stat {
+  margin-bottom: 8px;
+  padding: 7px 9px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
 }
 
-.trabalho-title{
-  color: #fa0808;
-  background-color: #121212;
-
+.stat:hover {
+  transform: translate3d(0, -3px, 0);
+  border-color: rgba(125, 12, 201, 0.4);
+  box-shadow: 0 0 14px rgba(125, 12, 201, 0.35);
 }
 
-.trabalho-text{
-  background-color: #ffffff;
-
+.stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 13px;
 }
 
-.conexao-title{
-  color: aqua;
-  background-color: #121212;
-}
-.conexao-text{
-  background-color: #fa0808;
+.stat-top span:first-child {
+  color: #cfcfcf;
+  letter-spacing: 0.5px;
 }
 
+.stat-top span:last-child {
+  color: #d8b4fe;
+  font-weight: 700;
+  text-shadow: 0 0 6px #7d0cc9;
+}
+
+.stat-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stat-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #7d0cc9, #a855f7, #22d3ee);
+  box-shadow: 0 0 10px rgba(125, 12, 201, 0.7);
+  transition: width 0.4s ease;
+  transform: translateZ(0);
+}
+
+.stat-fill.low {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.7);
+}
+
+.stat-fill.medium {
+  background: linear-gradient(90deg, #facc15, #fde047);
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.7);
+}
+
+.stat-fill.high {
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.7);
+}
 
 @keyframes meshAnimationDark {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes levitacaoMagnetica {
   0% {
-    transform: translateY(0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg);
     filter: brightness(100%);
   }
   30% {
-    transform: translateY(-20px) rotate(2deg); /* Sobe e inclina */
-    filter: brightness(120%); /* Brilha no topo */
+    transform: translate3d(0, -8px, 0) rotate(2deg);
+    filter: brightness(120%);
   }
   60% {
-    transform: translateY(-15px) rotate(-2deg); /* Balanço suave */
+    transform: translate3d(0, -5px, 0) rotate(-2deg);
   }
   100% {
-    transform: translateY(0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg);
     filter: brightness(100%);
   }
 }
 
+@keyframes iconPulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.3); }
+}
+
+@keyframes iconRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes iconFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes iconBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes iconSwing {
+  0% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  100% { transform: rotate(-10deg); }
+}

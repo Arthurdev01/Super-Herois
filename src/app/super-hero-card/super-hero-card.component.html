@@ -1,39 +1,37 @@
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Sekuya&display=swap");
-</style>
-
 <div class="background container">
   <div class="card container">
-    <div class="section1">
-      <h2>🧠 Poderes</h2>
+    <div class="poder-caracteristica container">
+      <div class="poder-card">
+        <h2 class="card-titulo poderes">Poderes</h2>
 
-      <p>Inteligência: {{ heroi?.powerstats?.intelligence }}</p>
+        <div class="stat" *ngFor="let stat of powerStats">
+          <div class="stat-top">
+            <span>{{ stat.name }}</span>
+            <span>{{ stat.value }}</span>
+          </div>
 
-      <p>Força: {{ heroi?.powerstats?.strength }}</p>
+          <div class="stat-bar">
+            <div
+              class="stat-fill"
+              [style.width.%]="stat.value"
+              [ngClass]="{
+                low: stat.value < 30,
+                medium: stat.value >= 30 && stat.value < 70,
+                high: stat.value >= 70,
+              }"
+            ></div>
+          </div>
+        </div>
+      </div>
 
-      <p>Velocidade: {{ heroi?.powerstats?.speed }}</p>
+      <div class="info-card">
+        <h2 class="card-titulo caracteristicas">Características</h2>
 
-      <p>Durabilidade: {{ heroi?.powerstats?.durability }}</p>
-
-      <p>Poder: {{ heroi?.powerstats?.power }}</p>
-
-      <p>Combate: {{ heroi?.powerstats?.combat }}</p>
-    </div>
-
-    <div class="section1">
-      <h2>🧬 Características</h2>
-
-      <p>Gênero: {{ heroi?.appearance?.gender }}</p>
-
-      <p>Raça: {{ heroi?.appearance?.race }}</p>
-
-      <p>Altura: {{ heroi?.appearance?.height }}</p>
-
-      <p>Peso: {{ heroi?.appearance?.weight }}</p>
-
-      <p>Olhos: {{ heroi?.appearance?.eyeColor }}</p>
-
-      <p>Cabelo: {{ heroi?.appearance?.hairColor }}</p>
+        <div *ngFor="let appear of appearance" class="item">
+          <span class="label">{{ appear.name }}</span>
+          <span class="valor">{{ appear.value }}</span>
+        </div>
+      </div>
     </div>
 
     <div class="name-image container">
@@ -41,45 +39,33 @@
 
       <img class="card-imagem" [src]="heroi?.images?.md" />
 
-      <div class="biografia container">
-        <h2 class="biografia-title">📖 Biografia</h2>
+      <div class="info-card">
+        <h2 class="card-titulo biografia">Biografia</h2>
 
-        <div class="biografia-descricao container">
-          <p>Nome completo: {{ heroi?.biography?.fullName }}</p>
-
-          <p>Alter ego: {{ heroi?.biography?.alterEgos }}</p>
-
-          <p>Apelidos: {{ heroi?.biography?.aliases }}</p>
-
-          <p>Nascimento: {{ heroi?.biography?.placeOfBirth }}</p>
-
-          <p>Primeira aparição: {{ heroi?.biography?.firstAppearance }}</p>
-
-          <p>Editora: {{ heroi?.biography?.publisher }}</p>
-
-          <p>Alinhamento: {{ heroi?.biography?.alignment }}</p>
+        <div *ngFor="let item of biografia" class="item">
+          <span class="label">{{ item.name }}</span>
+          <span class="valor">{{ item.value }}</span>
         </div>
       </div>
     </div>
 
-    <div class="conexao-trabalho container">
-      <div class="trabalho-title container">
-        <h2>💼 Trabalho</h2>
-      </div>
-      <div class="trabalho-text container">
-        <p>Ocupação: {{ heroi?.work?.occupation }}</p>
+    <div class="trabalho-conexao container">
+      <div class="info-card">
+        <h2 class="card-titulo trabalho">Trabalho</h2>
 
-        <p>Base: {{ heroi?.work?.base }}</p>
-      </div>
-
-      <div class="conexao-title container">
-        <h2>🔗 Conexões</h2>
+        <div *ngFor="let item of trabalho" class="item">
+          <span class="label">{{ item.name }}</span>
+          <span class="valor">{{ item.value }}</span>
+        </div>
       </div>
 
-      <div class="conexao-text container">
-        <p>Grupo: {{ heroi?.connections?.groupAffiliation }}</p>
+      <div class="info-card">
+        <h2 class="card-titulo conexoes">Conexões</h2>
 
-        <p>Parentes: {{ heroi?.connections?.relatives }}</p>
+        <div *ngFor="let item of conexoes" class="item">
+          <span class="label">{{ item.name }}</span>
+          <span class="valor">{{ item.value }}</span>
+        </div>
       </div>
     </div>
   </div>
