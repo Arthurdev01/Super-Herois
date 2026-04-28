@@ -7,6 +7,14 @@
 ![CSS3](https://img.shields.io/badge/CSS3-Styles-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Concluido-22c55e?style=for-the-badge)
 
+## 🌐 Projeto online
+
+Acesse a versão publicada no GitHub Pages:
+
+```text
+https://arthurdev01.github.io/Super-Herois/
+```
+
 ## ✨ Sobre o projeto
 
 O **Super Heróis** é um projeto desenvolvido para praticar Angular na prática, consumindo uma API pública de personagens e exibindo os dados em uma interface com cards, filtros, busca e tela de detalhes.
