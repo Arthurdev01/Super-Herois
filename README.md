@@ -1,59 +1,166 @@
-# SuperHerois
+# 🦸‍♂️ Super Heróis
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.22.
+> Uma aplicação em Angular para explorar super-heróis, filtrar personagens e visualizar seus atributos em uma interface moderna e responsiva.
 
-## Development server
+![Angular](https://img.shields.io/badge/Angular-19-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-Styles-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-22c55e?style=for-the-badge)
 
-To start a local development server, run:
+## 📸 Preview
 
-```bash
-ng serve
+> Adicione aqui um print ou GIF da aplicação rodando.
+
+```md
+![Preview do projeto](./preview.png)
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## ✨ Sobre o projeto
 
-## Code scaffolding
+O **Super Heróis** é um projeto desenvolvido para praticar Angular na prática, consumindo uma API pública de personagens e exibindo os dados em uma interface com cards, filtros, busca e tela de detalhes.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+A proposta é simular uma experiência de catálogo, onde o usuário pode pesquisar heróis, filtrar por editora, abrir os detalhes de cada personagem e voltar para a lista mantendo o estado anterior da navegação.
 
-```bash
-ng generate component component-name
+Esse projeto faz parte da minha evolução como **Desenvolvedor Front-end Júnior**, colocando em prática conceitos importantes de Angular, TypeScript, CSS e organização de componentes.
+
+## 🚀 Funcionalidades
+
+- 🔎 Busca de heróis por nome
+- 🏢 Filtro por editora, como Marvel e DC
+- 🃏 Cards responsivos com imagem dos personagens
+- 📊 Barras visuais para atributos dos heróis
+- 📄 Tela de detalhes com informações completas
+- 🧭 Navegação entre páginas com Angular Router
+- 💾 Preservação de busca, filtro e scroll com `sessionStorage`
+- 🎨 Interface estilizada com gradientes, sombras e efeitos de hover
+
+## 🧠 Conceitos praticados
+
+- Componentes standalone
+- Data binding
+- Event binding
+- Two-way binding com `ngModel`
+- Services e injeção de dependência
+- Consumo de API com `HttpClient`
+- Observables e `subscribe`
+- Rotas dinâmicas com parâmetro de ID
+- Lifecycle hooks: `OnInit` e `AfterViewInit`
+- Separação de responsabilidades entre componentes
+
+## 🛠️ Tecnologias
+
+| Tecnologia | Uso no projeto |
+| --- | --- |
+| Angular 19 | Estrutura da aplicação |
+| TypeScript | Lógica dos componentes e services |
+| HTML | Templates das telas |
+| CSS | Estilização, grid, cards e responsividade |
+| RxJS | Manipulação das respostas HTTP |
+| Angular Router | Navegação entre lista e detalhes |
+| Angular Forms | Busca e filtros com `ngModel` |
+
+## 🗂️ Estrutura principal
+
+```text
+src/
+  app/
+    super-hero-list/
+      super-hero-list.component.ts
+      super-hero-list.component.html
+      super-hero-list.component.css
+
+    super-hero-detail/
+      super-hero-detail.component.ts
+      super-hero-detail.component.html
+      super-hero-detail.component.css
+
+    super-hero-card/
+      super-hero-card.component.ts
+      super-hero-card.component.html
+      super-hero-card.component.css
+
+  service/
+    super-hero.service.ts
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## ⚙️ Como executar
+
+Clone o repositório:
 
 ```bash
-ng generate --help
+git clone <url-do-repositorio>
 ```
 
-## Building
-
-To build the project run:
+Acesse a pasta do projeto:
 
 ```bash
-ng build
+cd super_herois
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Instale as dependências:
 
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+Inicie o servidor de desenvolvimento:
 
 ```bash
-ng e2e
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Acesse no navegador:
 
-## Additional Resources
+```text
+http://localhost:4200
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📦 Build
+
+Para gerar a versão de produção:
+
+```bash
+npm run build
+```
+
+Os arquivos finais serão criados na pasta:
+
+```text
+dist/
+```
+
+## 🌐 API utilizada
+
+Os dados dos personagens são consumidos da **Superhero API**:
+
+```text
+https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api
+```
+
+Endpoints usados:
+
+| Endpoint | Descrição |
+| --- | --- |
+| `/all.json` | Retorna todos os heróis |
+| `/id/{id}.json` | Retorna os detalhes de um herói específico |
+
+## 📚 Aprendizados
+
+Durante o desenvolvimento deste projeto, pratiquei como estruturar uma aplicação Angular usando componentes, services e rotas. Também trabalhei com consumo de API, filtros em tempo real, manipulação de estado simples no navegador e criação de uma interface mais atrativa com CSS.
+
+Um dos pontos mais interessantes foi preservar a experiência do usuário ao navegar entre telas, mantendo a busca, o filtro e a posição do scroll quando ele volta para a listagem.
+
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Arthur** como projeto de estudo em Angular e Front-end.
+
+Atualmente estou em busca da minha primeira oportunidade como **Desenvolvedor Front-end Júnior**.
+
+## 🤝 Conecte-se comigo
+
+Se você tiver feedbacks, dicas ou souber de alguma oportunidade, será muito bem-vindo entrar em contato.
+
+```text
+Feedbacks são sempre bem-vindos.
+```
