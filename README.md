@@ -5,15 +5,7 @@
 ![Angular](https://img.shields.io/badge/Angular-19-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-Styles-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-22c55e?style=for-the-badge)
-
-## 📸 Preview
-
-> Adicione aqui um print ou GIF da aplicação rodando.
-
-```md
-![Preview do projeto](./preview.png)
-```
+![Status](https://img.shields.io/badge/Status-Concluido-22c55e?style=for-the-badge)
 
 ## ✨ Sobre o projeto
 
@@ -149,7 +141,6 @@ Endpoints usados:
 Durante o desenvolvimento deste projeto, pratiquei como estruturar uma aplicação Angular usando componentes, services e rotas. Também trabalhei com consumo de API, filtros em tempo real, manipulação de estado simples no navegador e criação de uma interface mais atrativa com CSS.
 
 Um dos pontos mais interessantes foi preservar a experiência do usuário ao navegar entre telas, mantendo a busca, o filtro e a posição do scroll quando ele volta para a listagem.
-
 
 ## 👨‍💻 Autor
 
