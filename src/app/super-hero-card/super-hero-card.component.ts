@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {  Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-super-hero-card',
@@ -9,6 +11,20 @@ import { CommonModule } from '@angular/common';
 })
 export class SuperHeroCardComponent {
   @Input() heroi: any = null;
+
+constructor(
+  private location: Location,
+  private router: Router
+) {}
+
+voltar() {
+    if (history.length > 1) {
+    this.location.back();
+  } else {
+    this.router.navigate(['/']); // fallback
+  }
+}
+
 
   get powerStats() {
     return [
