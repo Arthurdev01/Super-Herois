@@ -1,13 +1,34 @@
-<ul>
-  <li (click)="irParaDetails(heroi)" *ngFor="let heroi of herois">
-    <!-- aqui eu tenho uma lista que mostra todos os meu herois-->
-    <p>{{ heroi.name }}</p>
-    <p>Inteligência: {{ heroi?.powerstats?.intelligence }}</p>
-    <p>Força: {{ heroi?.powerstats?.strength }}</p>
-    <p>Velocidade: {{ heroi?.powerstats?.speed }}</p>
-    <p>Durabilidade: {{ heroi?.powerstats?.durability }}</p>
-    <p>Poder: {{ heroi?.powerstats?.power }}</p>
-    <p>Combate: {{ heroi?.powerstats?.combat }}</p>
-    <!--aqui estou fazendo essa lista mostrar apenas o nome desses herois -->
-  </li>
-</ul>
+<div class="background container">
+  <ul class="grid">
+    <li
+      class="card container"
+      (click)="irParaDetails(heroi)"
+      *ngFor="let heroi of herois"
+    >
+      <div class="esconde-dados">
+        <img class="card-imagem" [src]="heroi?.images?.md" />
+        <p class="heroi-nome">{{ heroi.name }}</p>
+      </div>
+      <div class="fica-stats container">
+        <div class="stat" *ngFor="let stat of getPowerStats(heroi)">
+          <div class="stat-top">
+            <span>{{ stat.name }}</span>
+            <span>{{ stat.value }}</span>
+          </div>
+
+          <div class="stat-bar">
+            <div
+              class="stat-fill"
+              [style.width.%]="stat.value"
+              [ngClass]="{
+                low: stat.value < 30,
+                medium: stat.value >= 30 && stat.value < 70,
+                high: stat.value >= 70,
+              }"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

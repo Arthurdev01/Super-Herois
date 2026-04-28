@@ -1,0 +1,211 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container{
+display: flex;
+
+}
+
+.background {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  z-index: 0;
+}
+
+.background::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(45deg, #101010, #1e053a, #291241, #290450);
+  background-size: 400% 400%;
+  animation: meshAnimationDark 12s ease infinite;
+  z-index: -1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(15, 15, 25, 0.85);
+  border: 1px solid transparent;
+  background-image:
+    linear-gradient(rgba(15,15,25,0.9), rgba(10,10,20,0.9)),
+    linear-gradient(120deg, #7d0cc9, #a855f7, #22d3ee);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.5),
+    0 0 10px rgba(125, 12, 201, 0.2);
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  position: relative;
+
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.7),
+    0 0 20px rgba(125, 12, 201, 0.5),
+    0 0 35px rgba(168, 85, 247, 0.4);
+
+  filter: brightness(1.05);
+
+
+}
+
+.card:hover .esconde-dados{
+  opacity: 0.06;
+
+
+}
+
+
+.heroi-nome {
+  font-family: "Sekuya", system-ui;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 23px;
+  color: #ffffff;
+  text-align: center;
+  text-transform: capitalize;
+  text-shadow: 2px 2px 4px #7d0cc9;
+  margin: 0 0 10px;
+  flex-shrink: 0;
+
+}
+
+.card-imagem{
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 18px;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  background-image: linear-gradient(white, white), linear-gradient(to right, #7d0cc9, #a855f7, #22d3ee);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+}
+
+.fica-stats {
+  position: absolute;
+inset: 0;
+flex-direction: column;
+justify-content: center;
+height: auto;
+}
+
+
+.stat {
+  font-family: "Sekuya", system-ui;
+  margin-bottom: 8px;
+  padding: 7px 9px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.034);
+  border: 2px solid rgba(231, 231, 231, 0.11);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+  display: none;
+
+}
+
+.card:hover .stat {
+  display: block;
+
+}
+
+.stat:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 10px rgba(125, 12, 201, 0.4),
+    0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.stat-top span:first-child {
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.stat-top span:last-child {
+  color: #dec5f8;
+  font-weight: 700;
+  text-shadow: 0 0 6px #7d0cc9;
+}
+
+.stat-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stat-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #7d0cc9, #a855f7, #22d3ee);
+  box-shadow: 0 0 10px rgba(125, 12, 201, 0.7);
+  transition: width 0.4s ease;
+  transform: translateZ(0);
+}
+
+.stat-fill.low {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.7);
+}
+
+.stat-fill.medium {
+  background: linear-gradient(90deg, #facc15, #fde047);
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.7);
+}
+
+.stat-fill.high {
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.7);
+}
+
+
+@keyframes meshAnimationDark {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
