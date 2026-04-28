@@ -41,15 +41,15 @@ Esse projeto faz parte da minha evolução como **Desenvolvedor Front-end Júnio
 
 ## 🛠️ Tecnologias
 
-| Tecnologia | Uso no projeto |
-| --- | --- |
-| Angular 19 | Estrutura da aplicação |
-| TypeScript | Lógica dos componentes e services |
-| HTML | Templates das telas |
-| CSS | Estilização, grid, cards e responsividade |
-| RxJS | Manipulação das respostas HTTP |
-| Angular Router | Navegação entre lista e detalhes |
-| Angular Forms | Busca e filtros com `ngModel` |
+| Tecnologia     | Uso no projeto                            |
+| -------------- | ----------------------------------------- |
+| Angular 19     | Estrutura da aplicação                    |
+| TypeScript     | Lógica dos componentes e services         |
+| HTML           | Templates das telas                       |
+| CSS            | Estilização, grid, cards e responsividade |
+| RxJS           | Manipulação das respostas HTTP            |
+| Angular Router | Navegação entre lista e detalhes          |
+| Angular Forms  | Busca e filtros com `ngModel`             |
 
 ## 🗂️ Estrutura principal
 
@@ -131,9 +131,9 @@ https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api
 
 Endpoints usados:
 
-| Endpoint | Descrição |
-| --- | --- |
-| `/all.json` | Retorna todos os heróis |
+| Endpoint        | Descrição                                  |
+| --------------- | ------------------------------------------ |
+| `/all.json`     | Retorna todos os heróis                    |
 | `/id/{id}.json` | Retorna os detalhes de um herói específico |
 
 ## 📚 Aprendizados
