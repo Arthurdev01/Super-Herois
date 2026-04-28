@@ -1,9 +1,23 @@
-<div class="background container">
+<div class="background">
+  <div class="search-container">
+    <input
+      type="text"
+      placeholder="Buscar herói..."
+      [(ngModel)]="busca"
+      class="search-input"
+    />
+
+    <select [(ngModel)]="filtroPublisher" class="publisher-select">
+      <option value="todos">Todos</option>
+      <option value="Marvel Comics">Marvel</option>
+      <option value="DC Comics">DC</option>
+    </select>
+  </div>
   <ul class="grid">
     <li
       class="card container"
       (click)="irParaDetails(heroi)"
-      *ngFor="let heroi of herois"
+      *ngFor="let heroi of heroisFiltrados()"
     >
       <div class="esconde-dados">
         <img class="card-imagem" [src]="heroi?.images?.md" />
